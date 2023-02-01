@@ -99,7 +99,7 @@ const SignIn = () => {
                      disableElevation
                      variant="contained"
                      size="large"
-                     color="secondary"
+                     color="primary"
                      fullWidth
                   >
                      Login
