@@ -1,0 +1,20 @@
+.colorgradiant {
+   background: linear-gradient(to left bottom, #f2deba, #ffefd6);
+   position: relative;
+   left: 50%;
+   border-radius: 0.5rem;
+   transform: translate(-50%);
+}
+.center {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+   padding: 3rem 1rem;
+   gap: 0.3rem;
+}
+/*body {
+   background: #ffefd6;
+}
+*/
