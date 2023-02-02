@@ -1,12 +1,15 @@
 import "./App.css";
-import Login from "./components/Form/Login"
-import SignIn from "./components/Form/SignIn"
+import Header from "./components/Header/Header";
+import Login from "./components/Form/Login";
+import SignUp from "./components/Form/SignUp";
 const App = () => {
-   return <>
-   <Login/>
-   <SignIn/>
-  
-   </>;
+   return (
+      <>
+      <Header/>
+         <Login />
+         <SignUp />
+      </>
+   );
 };
 
 export default App;
