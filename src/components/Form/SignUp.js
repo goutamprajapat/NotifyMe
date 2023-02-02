@@ -8,7 +8,7 @@ import {
    Grid,
 } from "@mui/material";
 import image from "../../Images/login.svg";
-const SignIn = () => {
+const SignUp = () => {
    return (
       <Grid
          Elevation
@@ -111,4 +111,4 @@ const SignIn = () => {
    );
 };
 
-export default SignIn;
+export default SignUp;
