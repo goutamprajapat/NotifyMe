@@ -14,8 +14,20 @@ import {
 } from "@mui/material";
 import { ViewDayOutlined } from "@mui/icons-material";
 import logo from "../../Images/AppBarLogo.png";
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { NavLink } from "react-router-dom";
+
+const pages = [
+   { to: "/", title: "HOME" },
+   { to: "/pricing", title: "Pricing" },
+   { to: "/blog", title: "Blog" },
+];
+const settings = [
+   { to: "/profile", title: "Profile" },
+   { to: "/account", title: "Account" },
+   { to: "/dashboard", title: "Dashboard" },
+   { to: "/login", title: "Login" },
+   { to: "/logout", title: "Logout" },
+];
 
 const Header = () => {
    const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,8 +49,8 @@ const Header = () => {
    };
 
    return (
-      <AppBar position="static" color="inherit" >
-         <Container maxWidth="xl" >
+      <AppBar position="static" color="inherit">
+         <Container maxWidth="xl">
             <Toolbar disableGutters>
                <Typography
                   variant="h6"
@@ -93,11 +105,18 @@ const Header = () => {
                         display: { xs: "block", md: "none" },
                      }}
                   >
-                     {pages.map((page) => (
-                        <MenuItem key={page} onClick={handleCloseNavMenu}>
-                           <Typography textAlign="center">{page}</Typography>
-                        </MenuItem>
-                     ))}
+                     {pages.map((page) => {
+                        return (
+                           <MenuItem
+                              key={page.title}
+                              onClick={handleCloseNavMenu}
+                           >
+                              <Typography textAlign="center">
+                                 <NavLink to={page.to}>{page.title}</NavLink>
+                              </Typography>
+                           </MenuItem>
+                        );
+                     })}
                   </Menu>
                </Box>
 
@@ -126,15 +145,17 @@ const Header = () => {
                   ></Box>
                </Typography>
                <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                  {pages.map((page) => (
-                     <Button
-                        key={page}
-                        onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: "black", display: "block" }}
-                     >
-                        {page}
-                     </Button>
-                  ))}
+                  {pages.map((page) => {
+                     return (
+                        <Button
+                           key={page.title}
+                           onClick={handleCloseNavMenu}
+                           sx={{ my: 2, color: "black", display: "block" }}
+                        >
+                           <NavLink to={page.to}>{page.title}</NavLink>
+                        </Button>
+                     );
+                  })}
                </Box>
 
                <Box sx={{ flexGrow: 0 }}>
@@ -162,11 +183,20 @@ const Header = () => {
                      open={Boolean(anchorElUser)}
                      onClose={handleCloseUserMenu}
                   >
-                     {settings.map((setting) => (
-                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                           <Typography textAlign="center">{setting}</Typography>
-                        </MenuItem>
-                     ))}
+                     {settings.map((setting) => {
+                        return (
+                           <MenuItem
+                              key={setting.title}
+                              onClick={handleCloseUserMenu}
+                           >
+                              <Typography textAlign="center">
+                                 <NavLink to={setting.to}>
+                                    {setting.title}
+                                 </NavLink>
+                              </Typography>
+                           </MenuItem>
+                        );
+                     })}
                   </Menu>
                </Box>
             </Toolbar>
