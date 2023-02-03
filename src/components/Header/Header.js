@@ -12,8 +12,8 @@ import {
    Avatar,
    Container,
 } from "@mui/material";
-import { ViewDayOutlined, AbcOutlined } from "@mui/icons-material";
-
+import { ViewDayOutlined } from "@mui/icons-material";
+import logo from "../../Images/AppBarLogo.png";
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
@@ -37,12 +37,9 @@ const Header = () => {
    };
 
    return (
-      <AppBar position="static">
-         <Container maxWidth="xl">
+      <AppBar position="static" color="inherit" >
+         <Container maxWidth="xl" >
             <Toolbar disableGutters>
-               <AbcOutlined
-                  sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-               />
                <Typography
                   variant="h6"
                   noWrap
@@ -58,7 +55,13 @@ const Header = () => {
                      textDecoration: "none",
                   }}
                >
-                  LOGO
+                  <Box
+                     component="img"
+                     alt="image"
+                     src={logo}
+                     maxWidth={"30%"}
+                     object-fit
+                  ></Box>
                </Typography>
 
                <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -97,7 +100,7 @@ const Header = () => {
                      ))}
                   </Menu>
                </Box>
-               <AbcOutlined sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
                <Typography
                   variant="h5"
                   noWrap
@@ -114,14 +117,20 @@ const Header = () => {
                      textDecoration: "none",
                   }}
                >
-                  LOGO
+                  <Box
+                     component="img"
+                     alt="image"
+                     src={logo}
+                     maxWidth={"30%"}
+                     object-fit
+                  ></Box>
                </Typography>
                <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
                   {pages.map((page) => (
                      <Button
                         key={page}
                         onClick={handleCloseNavMenu}
-                        sx={{ my: 2, color: "white", display: "block" }}
+                        sx={{ my: 2, color: "black", display: "block" }}
                      >
                         {page}
                      </Button>
