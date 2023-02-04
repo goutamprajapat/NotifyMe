@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
    Box,
    TextField,
@@ -9,6 +10,7 @@ import {
 } from "@mui/material";
 import image from "../../Images/login.svg";
 const SignUp = () => {
+   const navigate = useNavigate();
    return (
       <Grid
          Elevation
@@ -101,6 +103,7 @@ const SignUp = () => {
                      size="large"
                      color="primary"
                      fullWidth
+                     onClick={() => navigate("/login")}
                   >
                      Login
                   </Button>

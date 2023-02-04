@@ -11,7 +11,9 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import image from "../../Images/login.svg";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+   const navigate = useNavigate();
    const [showPassword, setShowPassword] = useState(false);
    return (
       <Grid
@@ -84,6 +86,7 @@ const Login = () => {
                      size="large"
                      color="secondary"
                      fullWidth
+                    onClick={()=>navigate("/logout")}
                   >
                      Signup
                   </Button>
