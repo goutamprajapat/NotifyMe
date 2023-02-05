@@ -88,7 +88,7 @@ const SignUp = () => {
                      fullWidth
                   />
                   <Button
-                     variant="contained"
+                     variant="outlined"
                      size="large"
                      color="primary"
                      fullWidth
