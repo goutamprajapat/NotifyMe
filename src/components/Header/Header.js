@@ -49,7 +49,7 @@ const Header = () => {
    };
 
    return (
-      <AppBar position="static" color="inherit">
+      <AppBar position="static" color="primary">
          <Container maxWidth="xl">
             <Toolbar disableGutters>
                <Typography
@@ -111,7 +111,7 @@ const Header = () => {
                               key={page.title}
                               onClick={handleCloseNavMenu}
                            >
-                              <Typography textAlign="center">
+                              <Typography textAlign="center" color="inherit">
                                  <NavLink to={page.to}>{page.title}</NavLink>
                               </Typography>
                            </MenuItem>
