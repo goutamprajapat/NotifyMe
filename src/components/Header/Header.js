@@ -49,7 +49,7 @@ const Header = () => {
    };
 
    return (
-      <AppBar position="static" color="primary">
+      <AppBar position="static" color="bg">
          <Container maxWidth="xl">
             <Toolbar disableGutters>
                <Typography
