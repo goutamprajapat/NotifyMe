@@ -49,7 +49,7 @@ const Header = () => {
    };
 
    return (
-      <AppBar position="static" color="bg">
+      <AppBar position="static" elevation={0} color="bg">
          <Container maxWidth="xl">
             <Toolbar disableGutters>
                <Typography
@@ -111,8 +111,13 @@ const Header = () => {
                               key={page.title}
                               onClick={handleCloseNavMenu}
                            >
-                              <Typography textAlign="center" color="inherit">
-                                 <NavLink to={page.to}>{page.title}</NavLink>
+                              <Typography
+                                 as={NavLink}
+                                 to={page.to}
+                                 textAlign="center"
+                                 color="inherit"
+                              >
+                                 {page.title}
                               </Typography>
                            </MenuItem>
                         );
@@ -148,11 +153,13 @@ const Header = () => {
                   {pages.map((page) => {
                      return (
                         <Button
+                           as={NavLink}
+                           to={page.to}
                            key={page.title}
                            onClick={handleCloseNavMenu}
                            sx={{ my: 2, color: "black", display: "block" }}
                         >
-                           <NavLink to={page.to}>{page.title}</NavLink>
+                           {page.title}
                         </Button>
                      );
                   })}
@@ -189,10 +196,13 @@ const Header = () => {
                               key={setting.title}
                               onClick={handleCloseUserMenu}
                            >
-                              <Typography textAlign="center">
-                                 <NavLink to={setting.to}>
-                                    {setting.title}
-                                 </NavLink>
+                              <Typography
+                                 textAlign="center"
+                                 as={NavLink}
+                                 to={setting.to}
+                                 color="primary"
+                              >
+                                 {setting.title}
                               </Typography>
                            </MenuItem>
                         );
