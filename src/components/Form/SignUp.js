@@ -12,105 +12,123 @@ import image from "../../Images/login.svg";
 const SignUp = () => {
    const navigate = useNavigate();
    return (
-      <Grid
-         Elevation
-         container
-         justifyContent="center"
-         maxWidth="md"
-         alignItems="center"
-         className="colorgradiant"
-      >
-         <Grid item xs={12} md={4}>
-            <Box
-               component="img"
-               alt="image"
-               src={image}
-               maxWidth={"100%"}
-               object-fit
-            ></Box>
-         </Grid>
-         <Grid item xs={12} md={6}>
-            <Box display="flex" justifyContent="center" alignItem="center">
-               <form
-                  noValidate
-                  autoComplete="off"
-                  m={3}
+      <>
+         <Box
+            position="fixed"
+            className="bg"
+            sx={{ top: 0, width: "100%", height: "100vh" }}
+         ></Box>
+         <Grid
+            Elevation
+            container
+            justifyContent="center"
+            maxWidth="md"
+            alignItems="center"
+            className="colorgradiant"
+            mt={{ xs: "0", md: "22vh" }}
+         >
+            <Grid
+               item
+               xs={12}
+               md={5}
+               container
+               direction="row"
+               justifyContent="center"
+               alignItems="center"
+            >
+               <Box
                   p={4}
-                  className="center"
-               >
-                  <Typography
-                     variant="h4"
-                     textAlign="center"
-                     sx={{ fontWeight: "bolder" }}
+                  component="img"
+                  alt="image"
+                  src={image}
+                  maxWidth={"100%"}
+                  object-fit
+               ></Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+               <Box display="flex" justifyContent="center" alignItem="center">
+                  <form
+                     noValidate
+                     autoComplete="off"
+                     m={3}
+                     p={4}
+                     className="center"
                   >
-                     Sign Up
-                  </Typography>
-                  <TextField
-                     id="standard-basic"
-                     label="Username"
-                     type="text"
-                     margin="normal"
-                     fullWidth
-                     color="primary"
-                  />
-                  <TextField
-                     id="standard-basic"
-                     label="Email"
-                     type="email"
-                     margin="normal"
-                     fullWidth
-                     color="primary"
-                  />
-                  <TextField
-                     id="standard-basic"
-                     label="Phone"
-                     type="number"
-                     margin="normal"
-                     fullWidth
-                     color="primary"
-                  />
-                  <TextField
-                     id="standard-basic"
-                     label="Password"
-                     type="Password"
-                     margin="normal"
-                     fullWidth
-                     color="primary"
-                  />
-                  <TextField
-                     Adornment
-                     id="standard-password-input"
-                     label="Conform Password"
-                     type="Password"
-                     autoComplete="current-password"
-                     margin="normal"
-                     color="primary"
-                     fullWidth
-                  />
-                  <Button
-                     variant="outlined"
-                     size="large"
-                     color="primary"
-                     fullWidth
-                     disableElevation
-                  >
-                     Signup
-                  </Button>
-                  <Divider>or</Divider>
-                  <Button
-                     disableElevation
-                     variant="contained"
-                     size="large"
-                     color="primary"
-                     fullWidth
-                     onClick={() => navigate("/login")}
-                  >
-                     Login
-                  </Button>
-               </form>
-            </Box>
+                     <Typography
+                        variant="h4"
+                        textAlign="center"
+                        sx={{ fontWeight: "bolder" }}
+                     >
+                        Sign Up
+                     </Typography>
+                     <TextField
+                        id="standard-basic"
+                        label="Username"
+                        type="text"
+                        margin="normal"
+                        fullWidth
+                        color="primary"
+                     />
+                     <TextField
+                        id="standard-basic"
+                        label="Email"
+                        type="email"
+                        margin="normal"
+                        fullWidth
+                        color="primary"
+                     />
+                     <TextField
+                        id="standard-basic"
+                        label="Phone"
+                        type="number"
+                        margin="normal"
+                        fullWidth
+                        color="primary"
+                     />
+                     <TextField
+                        id="standard-basic"
+                        label="Password"
+                        type="Password"
+                        margin="normal"
+                        fullWidth
+                        color="primary"
+                     />
+                     <TextField
+                        Adornment
+                        id="standard-password-input"
+                        label="Conform Password"
+                        type="Password"
+                        autoComplete="current-password"
+                        margin="normal"
+                        color="primary"
+                        fullWidth
+                     />
+                     <Button
+                        variant="contained"
+                        size="large"
+                        color="bg"
+                        fullWidth
+                        disableElevation
+                        onClick={() => navigate("/login")}
+                     >
+                        Signup
+                     </Button>
+                     <Divider>or</Divider>
+                     <Button
+                        disableElevation
+                        variant="contained"
+                        size="large"
+                        color="primary"
+                        fullWidth
+                        onClick={() => navigate("/login")}
+                     >
+                        Login
+                     </Button>
+                  </form>
+               </Box>
+            </Grid>
          </Grid>
-      </Grid>
+      </>
    );
 };
 
