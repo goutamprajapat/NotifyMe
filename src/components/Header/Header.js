@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { ViewDayOutlined } from "@mui/icons-material";
 import logo from "../../Images/AppBarLogo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink,Outlet } from "react-router-dom";
 
 const pages = [
    { to: "/", title: "HOME" },
@@ -49,6 +49,7 @@ const Header = () => {
    };
 
    return (
+      <>
       <AppBar position="static" elevation={0} color="bg">
          <Container maxWidth="xl">
             <Toolbar disableGutters>
@@ -102,7 +103,7 @@ const Header = () => {
                      open={Boolean(anchorElNav)}
                      onClose={handleCloseNavMenu}
                      sx={{
-                        display: { xs: "block", md: "none" },
+                        display: { xs: "block", md: "none",mt: "45px"  },
                      }}
                   >
                      {pages.map((page) => {
@@ -212,6 +213,8 @@ const Header = () => {
             </Toolbar>
          </Container>
       </AppBar>
+      <Outlet/>
+      </>
    );
 };
 export default Header;

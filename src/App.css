@@ -5,6 +5,14 @@
    border-radius: 0.5rem;
    transform: translate(-50%);
 }
+.bg {
+   background: #BDCDD6;
+}
+@media (max-width: 768px) {
+   .colorgradiant {
+      border-radius: 0;
+   }
+}
 .center {
    display: flex;
    justify-content: center;
@@ -18,4 +26,6 @@
    background: #ffefd6;
 }
 */
-a{text-decoration: none;}
+a {
+   text-decoration: none;
+}

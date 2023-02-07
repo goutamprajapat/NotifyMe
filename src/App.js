@@ -7,9 +7,10 @@ import SignUp from "./components/Form/SignUp";
 const App = () => {
    return (
       <>
-      <Header/>
          <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Header />} >
+            <Route index element={<Main />} />
+            </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<SignUp />} />
          </Routes>
